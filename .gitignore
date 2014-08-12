@@ -3,6 +3,10 @@
 bin/
 gen/
 
+# Virtualenv directory #
+########################
+env/
+
 # Eclipse files #
 #################
 proguard.cfg
