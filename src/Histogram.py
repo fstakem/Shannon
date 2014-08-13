@@ -40,7 +40,7 @@ scaled_luminance_image = luminance_image * 255
 scaled_luminance_image = scaled_luminance_image.astype(int)
 #ipdb.set_trace()
 
-imsave(output_filename, scaled_luminance_image)
+#imsave(output_filename, scaled_luminance_image)
 
 # Luminance histogram
 # This method is not really needed is you use numpy flatten
@@ -52,14 +52,31 @@ imsave(output_filename, scaled_luminance_image)
 #assert sum(hist_data) == 921600
 
 flat_data = scaled_luminance_image.flatten()
+plt.figure(1)
 plt.hist(flat_data, 256)
+plt.title('Luminance')
 
-plt.show()
+
 #ipdb.set_trace()
 
 
 # Serarate color channel histogram
+flat_red_data = red_data.flatten()
+flat_green_data = green_data.flatten()
+flat_blue_data = blue_data.flatten()
 
+plt.figure(2)
+plt.hist(flat_red_data, 256)
+plt.title('Red')
+plt.figure(3)
+plt.hist(flat_green_data, 256)
+plt.title('Green')
+plt.figure(4)
+plt.hist(flat_blue_data, 256)
+plt.title('Blue')
+
+
+plt.show()
 
 
 
